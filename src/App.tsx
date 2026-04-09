@@ -60,7 +60,7 @@ export default function App() {
   const paginatedPosts = content.posts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   const social = content.socialLinks;
-  const SocialIcons = ({ size = 16, strokeWidth = 1.5, className = "text-gray-400 hover:text-blue-300 transition-colors" }: { size?: number, strokeWidth?: number, className?: string }) => (
+  const SocialIcons = ({ size = 16, strokeWidth = 1.5, className = "text-white hover:text-blue-300 transition-colors" }: { size?: number, strokeWidth?: number, className?: string }) => (
     <>
       {social.instagram && <a href={social.instagram} target="_blank" rel="noopener noreferrer" className={className}><Instagram size={size} strokeWidth={strokeWidth} /></a>}
       {social.facebook && <a href={social.facebook} target="_blank" rel="noopener noreferrer" className={className}><Facebook size={size} strokeWidth={strokeWidth} /></a>}
@@ -78,9 +78,9 @@ export default function App() {
   return (
     <div className="min-h-screen font-sans" style={{ backgroundColor: theme.backgroundColor, color: theme.primaryColor }}>
       {/* Top Bar */}
-      <div className="w-full border-b border-gray-100 py-3 px-6 flex justify-between items-center text-sm text-gray-500">
+      <div className="w-full border-b border-gray-100 py-3 px-6 flex justify-between items-center text-sm text-white">
         <div className="flex gap-4">
-          <SocialIcons size={16} className="text-gray-500 hover:text-blue-300 transition-colors" />
+          <SocialIcons size={16} className="text-white hover:text-blue-300 transition-colors" />
         </div>
         <div className="flex items-center gap-2 cursor-pointer hover:text-blue-300 transition-colors">
           <Search size={16} />
@@ -93,7 +93,7 @@ export default function App() {
         <h1 className="font-serif text-5xl md:text-6xl tracking-widest mb-4 hover:text-blue-300 transition-colors">
           {content.siteName}
         </h1>
-        <p className="text-gray-500 tracking-[0.2em] text-xs uppercase">
+        <p className="text-white tracking-[0.2em] text-xs uppercase">
           {content.subtitle}
         </p>
       </header>
@@ -105,7 +105,7 @@ export default function App() {
             <button
               key={i}
               onClick={() => handleNavClick(item)}
-              className={`hover:text-blue-300 transition-colors uppercase tracking-[0.15em] ${activeView.type === item.type && activeView.value === item.value && !activePostId ? 'font-bold text-blue-300' : 'text-gray-400'}`}
+              className={`hover:text-blue-300 transition-colors uppercase tracking-[0.15em] ${activeView.type === item.type && activeView.value === item.value && !activePostId ? 'font-bold text-blue-300' : 'text-white'}`}
             >
               {item.label}
             </button>
@@ -119,13 +119,13 @@ export default function App() {
           <article className="max-w-3xl mx-auto animate-in fade-in duration-700">
             <button
               onClick={() => setActivePostId(null)}
-              className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] uppercase text-gray-500 hover:text-blue-300 transition-colors mb-12"
+              className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] uppercase text-white hover:text-blue-300 transition-colors mb-12"
             >
               <ArrowLeft size={16} /> Back
             </button>
 
             <div className="text-center mb-12">
-              <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-6 block">
+              <span className="text-xs font-medium tracking-[0.2em] text-white uppercase mb-6 block">
                 {activePost.category} <span className="mx-2">|</span> {activePost.date}
               </span>
               <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-tight">
@@ -141,7 +141,7 @@ export default function App() {
               />
             </div>
 
-            <div className="prose prose-lg max-w-none font-light text-gray-600 leading-loose space-y-8">
+            <div className="prose prose-lg max-w-none font-light text-white leading-loose space-y-8">
               {activePost.content?.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
@@ -149,9 +149,9 @@ export default function App() {
 
             <div className="mt-20 pt-10 border-t border-gray-100 flex justify-between items-center">
               <div className="flex gap-4">
-                <span className="text-xs tracking-widest uppercase text-gray-400">Share:</span>
-                <a href="#" className="text-gray-400 hover:text-blue-300"><Facebook size={16} /></a>
-                <a href="#" className="text-gray-400 hover:text-blue-300"><Twitter size={16} /></a>
+                <span className="text-xs tracking-widest uppercase text-white">Share:</span>
+                <a href="#" className="text-white hover:text-blue-300"><Facebook size={16} /></a>
+                <a href="#" className="text-white hover:text-blue-300"><Twitter size={16} /></a>
               </div>
             </div>
           </article>
@@ -160,7 +160,7 @@ export default function App() {
           <div className="animate-in fade-in duration-700">
             <div className="mb-16 text-center border-b border-gray-100 pb-16">
               <h2 className="font-serif text-4xl tracking-widest uppercase">{activeView.value}</h2>
-              <p className="text-gray-500 mt-4 tracking-[0.2em] text-xs uppercase">Category Archives</p>
+              <p className="text-white mt-4 tracking-[0.2em] text-xs uppercase">Category Archives</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {allPosts.filter(p => p.category === activeView.value).map((post, i) => (
@@ -169,7 +169,7 @@ export default function App() {
                     <img src={post.image} alt={post.title} className="w-full h-[250px] object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" />
                   </div>
                   <div className="text-center px-2">
-                    <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-3 block">
+                    <span className="text-xs font-medium tracking-[0.2em] text-white uppercase mb-3 block">
                       {post.date}
                     </span>
                     <h3 className="font-serif text-xl mb-4 group-hover:text-blue-300 transition-colors duration-300">
@@ -183,7 +183,7 @@ export default function App() {
               ))}
             </div>
             {allPosts.filter(p => p.category === activeView.value).length === 0 && (
-              <p className="text-center text-gray-400 font-light py-20">目前這個分類還沒有文章喔！</p>
+              <p className="text-center text-white font-light py-20">目前這個分類還沒有文章喔！</p>
             )}
           </div>
         ) : activeView.type === 'about' ? (
@@ -192,10 +192,10 @@ export default function App() {
             <h2 className="font-serif text-4xl tracking-widest uppercase mb-12">{content.sidebar.about.title}</h2>
             <img src={content.sidebar.about.image} alt={content.sidebar.about.name} className="w-full max-w-md mx-auto mb-10 object-cover aspect-[4/5]" />
             <h3 className="font-serif text-3xl mb-6">{content.sidebar.about.name}</h3>
-            <p className="text-gray-600 leading-loose font-light text-lg">
+            <p className="text-white leading-loose font-light text-lg">
               {content.sidebar.about.description}
             </p>
-            <p className="text-gray-600 leading-loose font-light text-lg mt-6">
+            <p className="text-white leading-loose font-light text-lg mt-6">
               {content.sidebar.aboutExtended}
             </p>
             <div className="mt-16 flex justify-center gap-6">
@@ -216,13 +216,13 @@ export default function App() {
                   />
                 </div>
                 <div className="text-center max-w-3xl mx-auto px-4">
-                  <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-4 block">
+                  <span className="text-xs font-medium tracking-[0.2em] text-white uppercase mb-4 block">
                     {content.heroPost.category} <span className="mx-2">|</span> {content.heroPost.date}
                   </span>
                   <h2 className="font-serif text-3xl md:text-5xl mb-6 group-hover:text-blue-300 transition-colors duration-300 leading-tight">
                     {content.heroPost.title}
                   </h2>
-                  <p className="text-gray-500 leading-relaxed mb-8 font-light">
+                  <p className="text-white leading-relaxed mb-8 font-light">
                     {content.heroPost.excerpt}
                   </p>
                   <button className="text-xs font-medium tracking-[0.2em] uppercase border-b border-white pb-1 hover:text-blue-300 hover:border-blue-300 transition-all">
@@ -245,13 +245,13 @@ export default function App() {
                       />
                     </div>
                     <div className="text-center px-4">
-                      <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-4 block">
+                      <span className="text-xs font-medium tracking-[0.2em] text-white uppercase mb-4 block">
                         {post.category} <span className="mx-2">|</span> {post.date}
                       </span>
                       <h3 className="font-serif text-2xl md:text-3xl mb-5 group-hover:text-blue-300 transition-colors duration-300">
                         {post.title}
                       </h3>
-                      <p className="text-gray-500 leading-relaxed mb-6 text-sm font-light">
+                      <p className="text-white leading-relaxed mb-6 text-sm font-light">
                         {post.excerpt}
                       </p>
                       <button className="text-xs font-medium tracking-[0.2em] uppercase border-b border-white pb-1 hover:text-blue-300 hover:border-blue-300 transition-all">
@@ -268,7 +268,7 @@ export default function App() {
                       <button
                         key={i}
                         onClick={() => setCurrentPage(i + 1)}
-                        className={`w-10 h-10 flex items-center justify-center border text-sm font-medium transition-colors ${currentPage === i + 1 ? 'border-white text-white' : 'border-transparent text-gray-400 hover:text-blue-300'}`}
+                        className={`w-10 h-10 flex items-center justify-center border text-sm font-medium transition-colors ${currentPage === i + 1 ? 'border-white text-white' : 'border-transparent text-white hover:text-blue-300'}`}
                       >
                         {i + 1}
                       </button>
@@ -276,7 +276,7 @@ export default function App() {
                     {currentPage < totalPages && (
                       <button
                         onClick={() => setCurrentPage(currentPage + 1)}
-                        className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-blue-300 cursor-pointer transition-colors"
+                        className="w-10 h-10 flex items-center justify-center text-white hover:text-blue-300 cursor-pointer transition-colors"
                       >
                         <ChevronRight size={18} strokeWidth={1.5} />
                       </button>
@@ -300,7 +300,7 @@ export default function App() {
                     />
                   </div>
                   <h5 className="font-serif text-2xl mb-3">{content.sidebar.about.name}</h5>
-                  <p className="text-gray-500 text-sm leading-relaxed font-light">
+                  <p className="text-white text-sm leading-relaxed font-light">
                     {content.sidebar.about.description}
                   </p>
                   <button onClick={() => handleNavClick({type: 'about'})} className="mt-8 text-xs font-medium tracking-[0.2em] uppercase border-b border-white pb-1 hover:text-blue-300 hover:border-blue-300 transition-all">
@@ -315,9 +315,9 @@ export default function App() {
                   </h4>
                   <ul className="space-y-4">
                     {content.sidebar.categories.map((cat, i) => (
-                      <li key={i} onClick={() => handleNavClick({type: 'category', value: cat.value})} className="flex justify-between items-center text-sm text-gray-500 hover:text-blue-300 cursor-pointer group font-light transition-colors">
+                      <li key={i} onClick={() => handleNavClick({type: 'category', value: cat.value})} className="flex justify-between items-center text-sm text-white hover:text-blue-300 cursor-pointer group font-light transition-colors">
                         <span className="group-hover:translate-x-1 transition-transform">{cat.name}</span>
-                        <span className="text-gray-400 text-xs">({cat.count})</span>
+                        <span className="text-white text-xs">({cat.count})</span>
                       </li>
                     ))}
                   </ul>
@@ -342,9 +342,9 @@ export default function App() {
       <footer className="text-white py-20 text-center mt-20" style={{ backgroundColor: theme.footerBackground }}>
         <h2 className="font-serif text-3xl tracking-[0.2em] mb-10">{content.siteName}</h2>
         <div className="flex justify-center gap-8 mb-12">
-          <SocialIcons size={20} className="text-gray-400 hover:text-blue-300 transition-colors" />
+          <SocialIcons size={20} className="text-white hover:text-blue-300 transition-colors" />
         </div>
-        <p className="text-[10px] text-gray-500 tracking-[0.2em] uppercase">
+        <p className="text-[10px] text-white tracking-[0.2em] uppercase">
           {content.footer.text}
         </p>
       </footer>
