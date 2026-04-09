@@ -4,13 +4,13 @@
 
   
   "theme": {
-    "primaryColor": "#2d3b2d",
-    "accentColor": "#888888",
-    "backgroundColor": "#cccccc",
-    "footerBackground": "#1a2332",
-    "sidebarBackground": "#eef1f5",
-    "fontSans": "KaiTi, 楷體, sans-serif",
-    "fontSerif": "KaiTi, 楷體, serif"
+    "primaryColor": "#2c3e50",
+    "accentColor": "#f39c12",
+    "backgroundColor": "#0f0f23",
+    "footerBackground": "#1a1a2e",
+    "sidebarBackground": "#16213e",
+    "fontSans": "Montserrat, sans-serif",
+    "fontSerif": "Cormorant Garamond, serif"
   },
 
   "socialLinks": {

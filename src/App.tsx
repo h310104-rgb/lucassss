@@ -22,10 +22,29 @@ export default function App() {
     root.style.setProperty('--font-serif', theme.fontSerif);
   }, []);
 
-  // Scroll to top when changing views or pages
+  // Generate stars for starry sky effect
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [activePostId, activeView, currentPage]);
+    const starsContainer = document.createElement('div');
+    starsContainer.className = 'stars';
+    document.body.appendChild(starsContainer);
+
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.width = Math.random() * 3 + 1 + 'px';
+      star.style.height = star.style.width;
+      star.style.animationDelay = Math.random() * 2 + 's';
+      starsContainer.appendChild(star);
+    }
+
+    return () => {
+      if (starsContainer.parentNode) {
+        starsContainer.parentNode.removeChild(starsContainer);
+      }
+    };
+  }, []);
 
   const allPosts = [content.heroPost, ...content.posts];
   const activePost = activePostId ? allPosts.find(p => p.id === activePostId) : null;
