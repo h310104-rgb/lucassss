@@ -32,7 +32,7 @@
     "category": "THINK",
     "title": "About Life?",
     "date": "2026.03.29",
-    "image": "/images/IMG_2357.JPG",
+    "image": "./images/IMG_2357.JPG",
     "excerpt": "人生嗎？",
     "content": [
       "既然一切終將消逝，我們此刻的「在意」究竟是什麼？",
@@ -49,7 +49,7 @@
       "category": "THINK",
       "title": "愛情的大壞蛋",
       "date": "2026.04.05",
-      "image": "/images/IMG_3347.JPG",
+      "image": "./images/IMG_3347.JPG",
       "excerpt": "愛嗎？",
       "content": [
         "我們總在還不懂愛的時候遇見當下最想愛的人。",
@@ -64,7 +64,7 @@
       "category": "EVERLASTING",
       "title": "想永遠記得",
       "date": "2026.04.08",
-      "image": "/images/IMG_5498.PNG",
+      "image": "./images/IMG_5498.PNG",
       "excerpt": "人生篇章。",
       "content": [
         "我好像很難認真活在當下，不是在焦慮未來，就是在反思過去。",
@@ -78,7 +78,7 @@
       "category": "EXPERIENCE",
       "title": "遇見花香的那刻",
       "date": "2026.02.15",
-      "image": "/images/IMG_2770.JPG",
+      "image": "./images/IMG_2770.JPG",
       "excerpt": "我愛貓",
       "content": [
         "好喜歡貓咖，想住在那裡。"
@@ -89,7 +89,7 @@
       "category": "EVERLASTING",
       "title": "那回不去的瞬間",
       "date": "2026.02.01",
-      "image": "/images/IMG_3454.JPG",
+      "image": "./images/IMG_3454.JPG",
       "excerpt": "轉瞬即逝",
       "content": [
         "沒有一個瞬間能夠重來",
@@ -103,7 +103,7 @@
       "category": "EXPERIENCE",
       "title": "懷",
       "date": "2026.01.20",
-      "image": "/images/IMG_2763.jpg",
+      "image": "./images/IMG_2763.jpg",
       "excerpt": "胡思亂想",
       "content": [
         "想念有妳的夏天，想念和妳度過的夜",
