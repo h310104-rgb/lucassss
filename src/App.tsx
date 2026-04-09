@@ -60,7 +60,7 @@ export default function App() {
   const paginatedPosts = content.posts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   const social = content.socialLinks;
-  const SocialIcons = ({ size = 16, strokeWidth = 1.5, className = "text-gray-400 hover:text-black transition-colors" }: { size?: number, strokeWidth?: number, className?: string }) => (
+  const SocialIcons = ({ size = 16, strokeWidth = 1.5, className = "text-gray-400 hover:text-blue-300 transition-colors" }: { size?: number, strokeWidth?: number, className?: string }) => (
     <>
       {social.instagram && <a href={social.instagram} target="_blank" rel="noopener noreferrer" className={className}><Instagram size={size} strokeWidth={strokeWidth} /></a>}
       {social.facebook && <a href={social.facebook} target="_blank" rel="noopener noreferrer" className={className}><Facebook size={size} strokeWidth={strokeWidth} /></a>}
@@ -80,9 +80,9 @@ export default function App() {
       {/* Top Bar */}
       <div className="w-full border-b border-gray-100 py-3 px-6 flex justify-between items-center text-sm text-gray-500">
         <div className="flex gap-4">
-          <SocialIcons size={16} className="text-gray-500 hover:text-black transition-colors" />
+          <SocialIcons size={16} className="text-gray-500 hover:text-blue-300 transition-colors" />
         </div>
-        <div className="flex items-center gap-2 cursor-pointer hover:text-black transition-colors">
+        <div className="flex items-center gap-2 cursor-pointer hover:text-blue-300 transition-colors">
           <Search size={16} />
           <span className="uppercase tracking-widest text-xs">Search</span>
         </div>
@@ -90,7 +90,7 @@ export default function App() {
 
       {/* Header */}
       <header className="py-16 text-center cursor-pointer" onClick={() => handleNavClick({type: 'home'})}>
-        <h1 className="font-serif text-5xl md:text-6xl tracking-widest mb-4 hover:text-gray-600 transition-colors">
+        <h1 className="font-serif text-5xl md:text-6xl tracking-widest mb-4 hover:text-blue-300 transition-colors">
           {content.siteName}
         </h1>
         <p className="text-gray-500 tracking-[0.2em] text-xs uppercase">
@@ -105,8 +105,7 @@ export default function App() {
             <button
               key={i}
               onClick={() => handleNavClick(item)}
-              className={`hover:text-gray-400 transition-colors uppercase tracking-[0.15em] ${activeView.type === item.type && activeView.value === item.value && !activePostId ? 'font-bold' : 'text-gray-500'}`}
-              style={activeView.type === item.type && activeView.value === item.value && !activePostId ? { color: theme.primaryColor } : undefined}
+              className={`hover:text-blue-300 transition-colors uppercase tracking-[0.15em] ${activeView.type === item.type && activeView.value === item.value && !activePostId ? 'font-bold text-blue-300' : 'text-gray-400'}`}
             >
               {item.label}
             </button>
@@ -120,7 +119,7 @@ export default function App() {
           <article className="max-w-3xl mx-auto animate-in fade-in duration-700">
             <button
               onClick={() => setActivePostId(null)}
-              className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] uppercase text-gray-500 hover:text-black transition-colors mb-12"
+              className="flex items-center gap-2 text-xs font-medium tracking-[0.2em] uppercase text-gray-500 hover:text-blue-300 transition-colors mb-12"
             >
               <ArrowLeft size={16} /> Back
             </button>
@@ -151,8 +150,8 @@ export default function App() {
             <div className="mt-20 pt-10 border-t border-gray-100 flex justify-between items-center">
               <div className="flex gap-4">
                 <span className="text-xs tracking-widest uppercase text-gray-400">Share:</span>
-                <a href="#" className="text-gray-400 hover:text-black"><Facebook size={16} /></a>
-                <a href="#" className="text-gray-400 hover:text-black"><Twitter size={16} /></a>
+                <a href="#" className="text-gray-400 hover:text-blue-300"><Facebook size={16} /></a>
+                <a href="#" className="text-gray-400 hover:text-blue-300"><Twitter size={16} /></a>
               </div>
             </div>
           </article>
@@ -173,10 +172,10 @@ export default function App() {
                     <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-3 block">
                       {post.date}
                     </span>
-                    <h3 className="font-serif text-xl mb-4 group-hover:text-gray-500 transition-colors duration-300">
+                    <h3 className="font-serif text-xl mb-4 group-hover:text-blue-300 transition-colors duration-300">
                       {post.title}
                     </h3>
-                    <button className="text-[10px] font-medium tracking-[0.2em] uppercase border-b border-black pb-1 hover:text-gray-400 hover:border-gray-400 transition-all">
+                    <button className="text-[10px] font-medium tracking-[0.2em] uppercase border-b border-white pb-1 hover:text-blue-300 hover:border-blue-300 transition-all">
                       Read More
                     </button>
                   </div>
@@ -220,13 +219,13 @@ export default function App() {
                   <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-4 block">
                     {content.heroPost.category} <span className="mx-2">|</span> {content.heroPost.date}
                   </span>
-                  <h2 className="font-serif text-3xl md:text-5xl mb-6 group-hover:text-gray-500 transition-colors duration-300 leading-tight">
+                  <h2 className="font-serif text-3xl md:text-5xl mb-6 group-hover:text-blue-300 transition-colors duration-300 leading-tight">
                     {content.heroPost.title}
                   </h2>
                   <p className="text-gray-500 leading-relaxed mb-8 font-light">
                     {content.heroPost.excerpt}
                   </p>
-                  <button className="text-xs font-medium tracking-[0.2em] uppercase border-b border-black pb-1 hover:text-gray-400 hover:border-gray-400 transition-all">
+                  <button className="text-xs font-medium tracking-[0.2em] uppercase border-b border-white pb-1 hover:text-blue-300 hover:border-blue-300 transition-all">
                     Read More
                   </button>
                 </div>
@@ -249,13 +248,13 @@ export default function App() {
                       <span className="text-xs font-medium tracking-[0.2em] text-gray-400 uppercase mb-4 block">
                         {post.category} <span className="mx-2">|</span> {post.date}
                       </span>
-                      <h3 className="font-serif text-2xl md:text-3xl mb-5 group-hover:text-gray-500 transition-colors duration-300">
+                      <h3 className="font-serif text-2xl md:text-3xl mb-5 group-hover:text-blue-300 transition-colors duration-300">
                         {post.title}
                       </h3>
                       <p className="text-gray-500 leading-relaxed mb-6 text-sm font-light">
                         {post.excerpt}
                       </p>
-                      <button className="text-xs font-medium tracking-[0.2em] uppercase border-b border-black pb-1 hover:text-gray-400 hover:border-gray-400 transition-all">
+                      <button className="text-xs font-medium tracking-[0.2em] uppercase border-b border-white pb-1 hover:text-blue-300 hover:border-blue-300 transition-all">
                         Read More
                       </button>
                     </div>
@@ -269,7 +268,7 @@ export default function App() {
                       <button
                         key={i}
                         onClick={() => setCurrentPage(i + 1)}
-                        className={`w-10 h-10 flex items-center justify-center border text-sm font-medium transition-colors ${currentPage === i + 1 ? 'border-black text-black' : 'border-transparent text-gray-400 hover:text-black'}`}
+                        className={`w-10 h-10 flex items-center justify-center border text-sm font-medium transition-colors ${currentPage === i + 1 ? 'border-white text-white' : 'border-transparent text-gray-400 hover:text-blue-300'}`}
                       >
                         {i + 1}
                       </button>
@@ -277,7 +276,7 @@ export default function App() {
                     {currentPage < totalPages && (
                       <button
                         onClick={() => setCurrentPage(currentPage + 1)}
-                        className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-black cursor-pointer transition-colors"
+                        className="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-blue-300 cursor-pointer transition-colors"
                       >
                         <ChevronRight size={18} strokeWidth={1.5} />
                       </button>
@@ -304,7 +303,7 @@ export default function App() {
                   <p className="text-gray-500 text-sm leading-relaxed font-light">
                     {content.sidebar.about.description}
                   </p>
-                  <button onClick={() => handleNavClick({type: 'about'})} className="mt-8 text-xs font-medium tracking-[0.2em] uppercase border-b border-black pb-1 hover:text-gray-400 hover:border-gray-400 transition-all">
+                  <button onClick={() => handleNavClick({type: 'about'})} className="mt-8 text-xs font-medium tracking-[0.2em] uppercase border-b border-white pb-1 hover:text-blue-300 hover:border-blue-300 transition-all">
                     Read More
                   </button>
                 </div>
@@ -316,7 +315,7 @@ export default function App() {
                   </h4>
                   <ul className="space-y-4">
                     {content.sidebar.categories.map((cat, i) => (
-                      <li key={i} onClick={() => handleNavClick({type: 'category', value: cat.value})} className="flex justify-between items-center text-sm text-gray-500 hover:text-black cursor-pointer group font-light transition-colors">
+                      <li key={i} onClick={() => handleNavClick({type: 'category', value: cat.value})} className="flex justify-between items-center text-sm text-gray-500 hover:text-blue-300 cursor-pointer group font-light transition-colors">
                         <span className="group-hover:translate-x-1 transition-transform">{cat.name}</span>
                         <span className="text-gray-400 text-xs">({cat.count})</span>
                       </li>
@@ -343,7 +342,7 @@ export default function App() {
       <footer className="text-white py-20 text-center mt-20" style={{ backgroundColor: theme.footerBackground }}>
         <h2 className="font-serif text-3xl tracking-[0.2em] mb-10">{content.siteName}</h2>
         <div className="flex justify-center gap-8 mb-12">
-          <SocialIcons size={20} className="text-gray-400 hover:text-white transition-colors" />
+          <SocialIcons size={20} className="text-gray-400 hover:text-blue-300 transition-colors" />
         </div>
         <p className="text-[10px] text-gray-500 tracking-[0.2em] uppercase">
           {content.footer.text}

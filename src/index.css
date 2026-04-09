@@ -16,7 +16,7 @@
 
 body {
   background-color: var(--color-bg);
-  color: var(--color-primary);
+  color: white;
   scroll-behavior: smooth;
   position: relative;
   overflow-x: hidden;
