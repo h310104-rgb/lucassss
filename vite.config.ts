@@ -4,7 +4,8 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig({
-  base: '/',
+  // Use relative asset paths so deployment under subpaths (e.g. GitHub Pages) works.
+  base: './',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
