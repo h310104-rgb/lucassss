@@ -7,11 +7,11 @@
 }
 
 :root {
-  --color-primary: #222222;
+  --color-primary: #1a2332;
   --color-accent: #888888;
-  --color-bg: #ffffff;
-  --color-footer-bg: #111111;
-  --color-sidebar-bg: #fafafa;
+  --color-bg: #f5f7fa;
+  --color-footer-bg: #1a2332;
+  --color-sidebar-bg: #eef1f5;
 }
 
 body {

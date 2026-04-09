@@ -18,6 +18,8 @@ export default function App() {
     root.style.setProperty('--color-bg', theme.backgroundColor);
     root.style.setProperty('--color-footer-bg', theme.footerBackground);
     root.style.setProperty('--color-sidebar-bg', theme.sidebarBackground);
+    root.style.setProperty('--font-sans', theme.fontSans);
+    root.style.setProperty('--font-serif', theme.fontSerif);
   }, []);
 
   // Scroll to top when changing views or pages
@@ -78,7 +80,7 @@ export default function App() {
       </header>
 
       {/* Navigation */}
-      <nav className="sticky top-0 backdrop-blur-sm z-50 border-y border-gray-100" style={{ backgroundColor: `${theme.backgroundColor}ee` }}>
+      <nav className="sticky top-0 backdrop-blur-sm z-50 border-y" style={{ backgroundColor: `${theme.backgroundColor}ee`, borderTopColor: theme.backgroundColor, borderBottomColor: theme.backgroundColor }}>
         <div className="max-w-4xl mx-auto px-6 py-5 flex justify-center gap-8 md:gap-12 text-xs font-medium tracking-[0.15em] uppercase">
           {content.nav.map((item, i) => (
             <button
